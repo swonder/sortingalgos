@@ -1,4 +1,4 @@
-def merge_sort(l:list):
+def merge_sort(l: list) -> list:
     if len(l) < 2:
         return l
 
