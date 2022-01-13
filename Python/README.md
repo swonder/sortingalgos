@@ -1,11 +1,21 @@
-## Creating the virtual env
-`python -m venv .\python\venv`
+# For Linux systems
 
-## Activating the virtual environment
-`./venv/scripts/activate`
+## Set up to run this program
 
-## Running unit tests
-`python -m unittest`
+### 1. Create the virtual env
+Change to the 'python' directory of this repository and type: \
+`python3 -m venv ./venv`
 
-## Running the time complexity/benchmarking program
-`python main.py`
+### 2. Activate the virtual environment
+`source venv/bin/activate`
+
+### 3. Install tabulate package
+`pip install tabulate`
+
+## Running this program
+
+### To run the unit tests
+`python3 -m unittest`
+
+### To run the time complexity/benchmarking program
+`python3 main.py`
