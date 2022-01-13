@@ -15,7 +15,7 @@ def get_sort_function_names() -> OrderedDict:
         ("Selection", selection_sort),
         ("Quick", quick_sort),
         ("M. Quick", modified_quick_sort),
-        #("Merge", merge_sort),
+        ("Merge", merge_sort),
         ("Hash", hash_sort),
         ("Insertion", insertion_sort),
     ])

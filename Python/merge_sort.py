@@ -1,43 +1,20 @@
-def merge_sort(l: list) -> list:
-    a_len = len(l)
-    # Make sure the recursive function stops at element size of 1
-    if a_len <= 1:
-        return
+def merge_sort(l:list):
+    if len(l) < 2:
+        return l
 
-    mid = a_len // 2
-    left = l[:mid]
-    right = l[mid:]
-    # Keep sorting both halves recursively until each list contains just one element
-    merge_sort(left)
-    merge_sort(right)
-    # Merge left and right back into l
-    merge(l, left, right)
+    result = []
+    mid = len(l) // 2
 
-# Subroutine for taking right and left child sublists and rewriting parent list with sorted values
-def merge(l: list, left: list, right: list):
-    left_len = len(left)
-    right_len = len(right)
-    i = 0 # Left list index value
-    j = 0 # Right list index value
-    k = 0 # Merged list index
-
-    while i < left_len and j < right_len:
-        # Left list had the smallest value place left value in merged list
-        if left[i] <= right[j]:
-            l[k] = left[i]
-            i += 1
-        # Right list had the smallest value place right value in merged list
+    right = merge_sort(l[:mid])
+    left = merge_sort(l[mid:])
+    while len(right) > 0 and len(left) > 0:
+        if right[0] > left[0]:
+            result.append(left[0])
+            left.pop(0)
         else:
-            l[k] = right[j]
-            j += 1
-        k += 1
-    # If left list was longer than the other, place any remaining left values in merge list
-    while i < left_len:
-        l[k] = left[i]
-        i += 1
-        k += 1
-    # If right list was longer than the other, place any remaining right values in merge list
-    while j < right_len:
-        l[k] = right[j]
-        j += 1
-        k += 1
+            result.append(right[0])
+            right.pop(0)
+    result += right
+    result += left
+
+    return result
