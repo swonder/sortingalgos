@@ -1,6 +1,6 @@
 # For Linux systems
 
-## Set up to run this program
+## Setup to run this program
 
 ### 1. Create the virtual env
 Change to the 'python' directory of this repository and type: \
